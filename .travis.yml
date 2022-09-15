@@ -30,8 +30,6 @@ script:
   - docker tag udagram-reverseproxy sudkul/udagram-reverseproxy:v1
   # Do similar for other three images
 
-after_success:
-  # Tasks to perform after the process is successful.
   # Push
   # Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings
   # Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
@@ -41,3 +39,6 @@ after_success:
   - docker push sudkul/udagram-frontend:v1
   - docker push sudkul/udagram-reverseproxy:v1
   # Do similar for other three images
+
+after_success:
+  # Tasks to perform after the process is successful.
